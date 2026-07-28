@@ -6,43 +6,55 @@
 
 ## Project Overview
 
-Enterprise AI Operations Center (AIOps) is a cloud-native SaaS platform that provides a unified gateway for managing multiple AI providers. Instead of applications directly connecting to different AI providers, all requests pass through a centralized AI Gateway that handles authentication, routing, governance, caching, analytics, monitoring, and root cause analysis.
+Enterprise AI Operations Center (AIOps) is a cloud-native Software-as-a-Service (SaaS) platform that provides a unified gateway for managing multiple AI providers. Instead of applications directly communicating with different AI providers, all requests pass through a centralized AI Gateway that performs authentication, governance, intelligent routing, caching, analytics, monitoring, and root cause analysis.
 
-The platform simplifies enterprise AI management by offering a single interface to multiple AI providers while providing complete visibility into AI usage, operational costs, provider health, and system performance.
+The platform acts as a centralized control plane, helping organizations improve AI reliability, reduce operational costs, monitor AI usage, and simplify multi-provider integration.
 
 ---
 
-## Problem Statement
+# Problem Statement
 
-Organizations increasingly use multiple AI providers such as Groq, GPT, Gemini, and Claude. Managing these providers individually creates several challenges:
+Modern organizations increasingly depend on multiple AI providers such as Groq, GPT, Gemini, and Claude. Managing these providers independently introduces several challenges:
 
-- Multiple provider integrations
+- Multiple AI integrations
 - No centralized monitoring
 - High AI operational costs
-- Lack of governance and policy enforcement
-- Poor visibility into AI usage
-- Difficult troubleshooting
 - Vendor dependency
+- Lack of governance
+- Poor observability
+- Difficult troubleshooting
+- No automated root cause analysis
+
+The Enterprise AI Operations Center solves these challenges by providing a unified AI management platform.
 
 ---
 
-## Vision Statement
+# Target Users (Personas)
 
-To build a scalable, secure, provider-agnostic AI operations platform that enables enterprises to monitor, govern, optimize, and analyze AI usage through a centralized management system.
+### Super Admin
+Manages the complete platform, providers, users, and global configurations.
+
+### Organization Admin
+Manages organizations, users, teams, budgets, and governance policies.
+
+### Team Admin
+Monitors team AI usage, analytics, and provider performance.
+
+### Developer
+Uses the AI Gateway to access multiple AI providers through a single API.
+
+### Viewer
+Monitors dashboards, reports, incidents, and system health.
 
 ---
 
-## Target Users (Personas)
+# Vision Statement
 
-- Super Admin
-- Organization Admin
-- Team Admin
-- Developer
-- Viewer
+To build a scalable, secure, provider-agnostic AI operations platform that enables organizations to monitor, govern, optimize, and analyze enterprise AI usage through centralized intelligence and real-time observability.
 
 ---
 
-## Key Features
+# Key Features / Goals
 
 - Secure JWT Authentication
 - Role-Based Access Control (RBAC)
@@ -51,22 +63,59 @@ To build a scalable, secure, provider-agnostic AI operations platform that enabl
 - Groq API Integration
 - Mock GPT, Gemini, and Claude Providers
 - Intelligent Routing Engine
-- Redis Caching
-- Analytics Dashboard
-- Cost Governance
-- Provider Health Monitoring
+- Redis Response Caching
+- Real-Time Analytics Dashboard
+- AI Cost Monitoring
+- Governance Policy Engine
 - Audit Logging
+- Provider Health Monitoring
 - Notification System
 - Root Cause Analysis (RCA)
-- Real-Time Dashboard using WebSockets
+- WebSocket-based Live Updates
 - Docker Support
 - Cloud Deployment
 
 ---
 
-## Technology Stack
+# Success Metrics
 
-### Frontend
+The project will be considered successful if it:
+
+- Routes AI requests successfully through the AI Gateway.
+- Supports multiple AI providers.
+- Displays real-time dashboards.
+- Tracks AI cost and token usage.
+- Reduces response time using Redis caching.
+- Detects provider failures.
+- Generates Root Cause Analysis.
+- Enforces governance policies.
+- Successfully deploys to cloud platforms.
+
+---
+
+# Assumptions
+
+- Internet connection is available.
+- Groq API is accessible.
+- PostgreSQL and Redis services are available.
+- Users have valid credentials.
+- Free-tier cloud services are sufficient for development.
+
+---
+
+# Constraints
+
+- Groq is the only real AI provider.
+- GPT, Gemini, and Claude are simulated.
+- Free-tier cloud services are used.
+- Development duration is approximately 25 days.
+
+---
+
+# Technology Stack
+
+## Frontend
+
 - React
 - TypeScript
 - Tailwind CSS
@@ -77,22 +126,26 @@ To build a scalable, secure, provider-agnostic AI operations platform that enabl
 - React Flow
 - Framer Motion
 
-### Backend
+## Backend
+
 - Java 21
 - Spring Boot
 - Spring Security
-- JWT Authentication
 - Spring Data JPA
 - Hibernate
+- JWT
 - Maven
 
-### Database
+## Database
+
 - PostgreSQL (Neon)
 
-### Cache
+## Cache
+
 - Redis (Upstash)
 
-### Deployment
+## Deployment
+
 - Vercel
 - Render
 - Docker
@@ -100,87 +153,6 @@ To build a scalable, secure, provider-agnostic AI operations platform that enabl
 
 ---
 
-## Success Metrics
+# License
 
-- Secure authentication for all users
-- Unified access to multiple AI providers
-- Real-time analytics and monitoring
-- Intelligent provider routing
-- Reduced AI costs using caching
-- Effective governance and policy enforcement
-- Accurate root cause analysis
-- Successful cloud deployment
-
----
-
-## Assumptions
-
-- Internet connectivity is available.
-- Groq API is accessible.
-- PostgreSQL and Redis services are available.
-- Users have valid credentials.
-
----
-
-## Constraints
-
-- Groq is the only real AI provider.
-- Other AI providers are simulated.
-- Free-tier cloud services are used.
-- Development timeline is approximately 25 days.
-
----
-
-## Branching Strategy
-
-This project follows **GitHub Flow**.
-
-```
-main
-   │
-feature/authentication
-   │
-Pull Request
-   │
-Merge into main
-```
-
-Each new feature will be developed in a separate feature branch before being merged into the main branch.
-
----
-
-## Quick Start – Local Development
-
-```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to the project
-cd enterprise-ai-operations-center
-
-# Start the application
-docker compose up
-```
-
----
-
-## Development Tools
-
-- Java 21
-- Spring Boot
-- React
-- VS Code
-- IntelliJ IDEA
-- PostgreSQL
-- Redis
-- Docker Desktop
-- Git & GitHub
-- Postman
-- Draw.io
-- Figma
-
----
-
-## License
-
-This project is developed for academic purposes as part of the B.Tech CSE (AI & ML) Software Engineering Capstone Project at VIT Chennai.
+This project is developed as a Software Engineering Capstone Project for B.Tech Computer Science and Engineering (AI & ML).
