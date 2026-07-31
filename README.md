@@ -42,11 +42,14 @@ This project addresses these problems by introducing a centralized AI Operations
 ## 2. GitHub Branches
 <img width="954" height="476" alt="image" src="https://github.com/user-attachments/assets/492344d7-e286-49da-87d1-098f1199e25c" />
 ## 3. GitHub Boards
+<img width="959" height="496" alt="image" src="https://github.com/user-attachments/assets/ff107538-ca21-4ad1-8b86-3673f2393eac" />
 
 ## 4. ER Diagram (StarUML)
-<img width="940" height="469" alt="image" src="https://github.com/user-attachments/assets/f8f41d40-3580-4568-9d46-a100aaa652de" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/28458887-3cd9-44b0-9f8e-8d9e7a3968d4" />
 
 ## 5. Use Case Diagram (StarUML)
+<img width="1200" height="485" alt="image" src="https://github.com/user-attachments/assets/28c7ae9b-f08a-4876-a76f-464424bc3ac0" />
+
 ## 6. Class Diagram (StarUML)
 <img width="1408" height="1117" alt="image" src="https://github.com/user-attachments/assets/fce93bfe-8a60-4b8d-8a17-91cf7dd211b3" />
 
