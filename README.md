@@ -39,7 +39,29 @@ This project addresses these problems by introducing a centralized AI Operations
 # Screenshots
 ## 1. GitHub Repository
 <img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/abad7663-061c-41ea-8101-fdfe9dca9ea8" />
-## 2. GitHub Repository
+## 2. GitHub Branches
+<img width="954" height="476" alt="image" src="https://github.com/user-attachments/assets/492344d7-e286-49da-87d1-098f1199e25c" />
+## 3. GitHub Branches
+
+## 4. ER Diagram (StarUML)
+<img width="940" height="469" alt="image" src="https://github.com/user-attachments/assets/f8f41d40-3580-4568-9d46-a100aaa652de" />
+
+## 5. Use Case Diagram (StarUML)
+## 6. Class Diagram (StarUML)
+<img width="1408" height="1117" alt="image" src="https://github.com/user-attachments/assets/fce93bfe-8a60-4b8d-8a17-91cf7dd211b3" />
+
+## 7. Architecture Diagram (Draw.io)
+<img width="2866" height="2316" alt="AIOps_Architecture (2)" src="https://github.com/user-attachments/assets/a1ed6508-0553-4848-ac7f-7b26a8209b23" />
+
+## 8. Docker Desktop
+<img width="952" height="541" alt="image" src="https://github.com/user-attachments/assets/a65abcb8-9bdb-426e-b824-383c6eef1954" />
+
+## 9. Docker Build & Run (Terminal)
+<img width="721" height="515" alt="image" src="https://github.com/user-attachments/assets/ae369aa9-8b63-4848-b4f7-085634e8ff3e" />
+
+## 10. Running Web App
+<img width="940" height="520" alt="image" src="https://github.com/user-attachments/assets/cee11548-8e46-4c9a-b4ad-6417740c8d6f" />
+<img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/2673d38a-6102-4cea-aeae-d25e5274a49d" />
 
 # Target Users (Personas)
 
