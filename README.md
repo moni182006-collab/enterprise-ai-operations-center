@@ -208,7 +208,7 @@ This project addresses these problems by introducing a centralized AI Operations
 
 ---
 
-# 🏗 High-Level Architecture
+# High-Level Architecture
 
 The Enterprise AI Operations Center follows a modular, provider-agnostic architecture where every AI request passes through a centralized gateway before reaching an AI provider.
 
@@ -264,7 +264,7 @@ The architecture is designed to ensure:
 
 ---
 
-# 📂 Folder Structure
+# Folder Structure
 
 ```
 enterprise-ai-operations-center
@@ -338,7 +338,7 @@ feature/deployment
 
 ---
 
-# 🚀 Quick Start – Local Development
+# Quick Start – Local Development
 
 ## Prerequisites
 
@@ -572,6 +572,6 @@ Every module and feature is tracked as a GitHub Issue and managed throughout the
 
 **Monisha S B**
 **TEJAL SELVAM**
-# 📄 License
+# License
 
 This project is licensed under the **MIT License**.
