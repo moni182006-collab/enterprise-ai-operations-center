@@ -37,9 +37,9 @@ This project addresses these problems by introducing a centralized AI Operations
 
 ---
 # Screenshots
-## GitHub Repository
+## 1. GitHub Repository
 <img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/abad7663-061c-41ea-8101-fdfe9dca9ea8" />
-
+## 2. GitHub Repository
 
 # Target Users (Personas)
 
