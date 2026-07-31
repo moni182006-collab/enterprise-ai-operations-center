@@ -57,13 +57,16 @@ This project addresses these problems by introducing a centralized AI Operations
 ## 7. Architecture Diagram (Draw.io)
 <img width="2866" height="2316" alt="AIOps_Architecture (2)" src="https://github.com/user-attachments/assets/a1ed6508-0553-4848-ac7f-7b26a8209b23" />
 
-## 8. Docker Desktop
+## 8. Figma Wireframes 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/dc6ff525-d6ff-4caa-963e-41c9ae4ee0f9" />
+
+## 9. Docker Desktop
 <img width="952" height="541" alt="image" src="https://github.com/user-attachments/assets/a65abcb8-9bdb-426e-b824-383c6eef1954" />
 
-## 9. Docker Build & Run (Terminal)
+## 10. Docker Build & Run (Terminal)
 <img width="721" height="515" alt="image" src="https://github.com/user-attachments/assets/ae369aa9-8b63-4848-b4f7-085634e8ff3e" />
 
-## 10. Running Web App
+## 11. Running Web App
 <img width="940" height="520" alt="image" src="https://github.com/user-attachments/assets/cee11548-8e46-4c9a-b4ad-6417740c8d6f" />
 <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/2673d38a-6102-4cea-aeae-d25e5274a49d" />
 
