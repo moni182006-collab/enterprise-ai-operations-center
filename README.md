@@ -48,7 +48,8 @@ This project addresses these problems by introducing a centralized AI Operations
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/28458887-3cd9-44b0-9f8e-8d9e7a3968d4" />
 
 ## 5. Use Case Diagram (StarUML)
-<img width="1200" height="485" alt="image" src="https://github.com/user-attachments/assets/28c7ae9b-f08a-4876-a76f-464424bc3ac0" />
+<img width="746" height="453" alt="image" src="https://github.com/user-attachments/assets/c3840ce8-ae98-4369-a685-28bc149ff239" />
+
 
 ## 6. Class Diagram (StarUML)
 <img width="1408" height="1117" alt="image" src="https://github.com/user-attachments/assets/fce93bfe-8a60-4b8d-8a17-91cf7dd211b3" />
@@ -207,110 +208,257 @@ This project addresses these problems by introducing a centralized AI Operations
 
 ---
 
-# High-Level Architecture
+# 🏗 High-Level Architecture
+
+The Enterprise AI Operations Center follows a modular, provider-agnostic architecture where every AI request passes through a centralized gateway before reaching an AI provider.
 
 ```
-Users
-   │
-   ▼
-React Frontend
-   │
-   ▼
-Spring Boot Backend
-   │
-   ▼
-AI Gateway
-   │
-   ├── Authentication
-   ├── Governance
-   ├── Routing Engine
-   ├── Cache
-   ├── Analytics
-   └── Audit Logs
-   │
-   ▼
-Provider Adapter Layer
-   │
-   ├── Groq
-   ├── Mock GPT
-   ├── Mock Gemini
-   └── Mock Claude
-   │
-   ▼
-PostgreSQL + Redis
+                         ┌──────────────────────┐
+                         │        Users         │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                     ┌─────────────────────────────┐
+                     │      React Frontend         │
+                     └──────────┬──────────────────┘
+                                │ REST APIs
+                                ▼
+                 ┌────────────────────────────────────┐
+                 │      Spring Boot Backend           │
+                 └────────────────┬───────────────────┘
+                                  │
+                                  ▼
+                  ┌─────────────────────────────────┐
+                  │        AI Gateway               │
+                  ├─────────────────────────────────┤
+                  │ • Authentication                │
+                  │ • Governance Engine             │
+                  │ • Routing Engine                │
+                  │ • Redis Cache                   │
+                  │ • Analytics Engine              │
+                  │ • Audit Logging                 │
+                  └────────────────┬────────────────┘
+                                   │
+                                   ▼
+                  ┌─────────────────────────────────┐
+                  │    Provider Adapter Layer       │
+                  ├─────────────────────────────────┤
+                  │ • Groq API                      │
+                  │ • Mock GPT                      │
+                  │ • Mock Gemini                   │
+                  │ • Mock Claude                   │
+                  └────────────────┬────────────────┘
+                                   │
+                ┌──────────────────┴──────────────────┐
+                ▼                                     ▼
+      PostgreSQL Database                    Redis Cache
 ```
+
+The architecture is designed to ensure:
+
+- Provider independence using the Adapter Pattern
+- Intelligent AI routing using the Strategy Pattern
+- Enterprise governance and policy enforcement
+- High scalability through modular architecture
+- Centralized analytics, monitoring, and observability
 
 ---
 
-# Folder Structure
+# 📂 Folder Structure
 
 ```
 enterprise-ai-operations-center
 │
-├── backend
-├── frontend
-├── docs
-├── diagrams
-├── screenshots
-├── docker
-├── .github
-├── README.md
+├── backend/                        
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   ├── resources/
+│   │   │   └── ...
+│   │   └── test/
+│   ├── Dockerfile                   
+│   ├── pom.xml
+│   └── mvnw
+│
+├── frontend/                       
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   └── App.tsx
+│   ├── Dockerfile                  
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── docs/                           
+├── diagrams/                    
+├── screenshots/                   
+├── docker/                      
+├── .github/                    
+├── docker-compose.yml               
 ├── .gitignore
-├── docker-compose.yml
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
 
 ---
 
 # Branching Strategy
 
-This project follows **GitHub Flow**.
+This project follows the **GitHub Flow** branching strategy.
+
+## Branches
+
+- **main** – Stable production-ready branch.
+- **feature/setup-project** – Initial project setup and Review 1 implementation.
+- Future feature branches will follow:
 
 ```
-main
- │
- └── feature/setup-project
+feature/authentication
+feature/dashboard
+feature/gateway
+feature/provider-adapters
+feature/analytics
+feature/root-cause-analysis
+feature/deployment
 ```
 
-Development is performed in feature branches and merged into the `main` branch after review and testing.
+## Workflow
+
+1. Create a feature branch from **main**.
+2. Implement the assigned feature.
+3. Commit changes with meaningful commit messages.
+4. Push the feature branch.
+5. Create a Pull Request.
+6. Review and merge into **main**.
 
 ---
 
-# Quick Start – Local Development
+# 🚀 Quick Start – Local Development
 
 ## Prerequisites
 
+Before running the project, install:
+
 - Java 21
-- Node.js 20+
-- Docker Desktop
-- Git
 - Maven
+- Node.js 20+
+- npm
+- Git
+- Docker Desktop
+- PostgreSQL
+- Redis
+
+---
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/moni182006-collab/enterprise-ai-operations-center.git
-```
 
-## Open Project
-
-```bash
 cd enterprise-ai-operations-center
 ```
 
-## Build Using Docker
+---
+
+## Setup Using Docker (Recommended)
+
+Docker provides the easiest way to run the project without manually configuring Java, Node.js, PostgreSQL, or Redis.
+
+### Step 1 — Build Docker Images
+
+```bash
+docker compose build
+```
+
+---
+
+### Step 2 — Start the Application
 
 ```bash
 docker compose up --build
 ```
 
-## Backend
+The following services will start automatically:
+
+- Frontend → http://localhost:5173
+- Backend → http://localhost:8080
+
+---
+
+### Step 3 — Stop Containers
+
+```bash
+docker compose down
+```
+
+To remove volumes:
+
+```bash
+docker compose down -v
+```
+
+---
+
+# Docker Support
+
+Enterprise AI Operations Center is fully containerized for simplified local development and deployment.
+
+The project includes:
+
+✅ Spring Boot Backend Docker Image
+
+✅ React Frontend Docker Image
+
+✅ Docker Compose Configuration
+
+✅ Container Networking
+
+✅ Easy Local Development
+
+Future versions will additionally include:
+
+- PostgreSQL Container
+- Redis Container
+- Hot Reload
+- Environment Variable Management
+- Production Deployment Configuration
+
+---
+
+# Local Development (Without Docker)
+
+### Backend
+
+```bash
+cd backend
+
+./mvnw spring-boot:run
+```
+
+Backend runs at:
 
 ```
 http://localhost:8080
 ```
 
-## Frontend
+---
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs at:
 
 ```
 http://localhost:5173
@@ -318,28 +466,90 @@ http://localhost:5173
 
 ---
 
+# Useful Commands
+
+| Command | Purpose |
+|----------|----------|
+| docker compose build | Build Docker Images |
+| docker compose up | Start Containers |
+| docker compose down | Stop Containers |
+| docker ps | List Running Containers |
+| docker images | List Images |
+| git status | Check Repository Status |
+| git branch | Show Branches |
+| git pull | Pull Latest Changes |
+| git push | Push Changes |
+
+---
+
+# Local Development Tools
+
+The following tools are used throughout development:
+
+- Visual Studio Code
+- Git
+- GitHub
+- Java 21
+- Spring Boot
+- Maven
+- React
+- TypeScript
+- Vite
+- Docker Desktop
+- PostgreSQL
+- Redis
+- Postman
+- Draw.io
+- Figma
+
+---
+
+# Repository
+
+### GitHub Repository
+
+**Repository Link**
+
+> https://github.com/moni182006-collab/enterprise-ai-operations-center
+
+---
+# GitHub Project Board
+
+Development follows an Agile workflow using GitHub Issues and Project Boards.
+
+Workflow:
+
+```
+Backlog
+      ↓
+
+To Do
+      ↓
+
+In Progress
+      ↓
+
+Testing
+      ↓
+
+Done
+```
+
+Every module and feature is tracked as a GitHub Issue and managed throughout the project lifecycle.
+
+---
+
 # Development Timeline
 
-## Phase 1
-Planning, Vision Document, UI Design, Architecture
-
-## Phase 2
-Backend Foundation & Authentication
-
-## Phase 3
-AI Gateway, Provider Adapters, Routing Engine
-
-## Phase 4
-Analytics, Governance, RCA Engine
-
-## Phase 5
-Frontend Dashboard Development
-
-## Phase 6
-Testing, Docker, Deployment
-
-## Phase 7
-Documentation & Presentation
+| Phase | Description |
+|--------|-------------|
+| Phase 1 | Planning, Requirements, Architecture & UI Design |
+| Phase 2 | Backend Foundation & Authentication |
+| Phase 3 | AI Gateway, Provider Adapters & Routing |
+| Phase 4 | Analytics, Governance & Root Cause Analysis |
+| Phase 5 | Frontend Dashboard Development |
+| Phase 6 | Testing, Docker & Cloud Deployment |
+| Phase 7 | Documentation & Presentation |
 
 ---
 
@@ -347,41 +557,21 @@ Documentation & Presentation
 
 - Kubernetes Deployment
 - AI Cost Prediction
-- Enterprise SSO
-- Multi-Cloud Support
+- Enterprise Single Sign-On (SSO)
+- Multi-Cloud AI Support
 - Predictive Incident Detection
-- Advanced AI Governance
+- AI-based Recommendation Engine
 - Mobile Dashboard
 - Auto Scaling
-
----
-
-# Screenshots
-
-The `screenshots/` folder contains:
-
-- GitHub Repository
-- GitHub Branches
-- Docker Build
-- Docker Compose
-- Docker Desktop
-- Localhost Application
-- Development Environment
-
----
-
-# License
-
-MIT License
+- Real-time WebSocket Monitoring
+- Advanced Governance Policies
 
 ---
 
 # Author
 
 **Monisha S B**
+**TEJAL SELVAM**
+# 📄 License
 
-B.Tech Computer Science Engineering (AI & ML)
-
-VIT Chennai
-
-2026
+This project is licensed under the **MIT License**.
