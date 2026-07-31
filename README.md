@@ -41,7 +41,7 @@ This project addresses these problems by introducing a centralized AI Operations
 <img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/abad7663-061c-41ea-8101-fdfe9dca9ea8" />
 ## 2. GitHub Branches
 <img width="954" height="476" alt="image" src="https://github.com/user-attachments/assets/492344d7-e286-49da-87d1-098f1199e25c" />
-## 3. GitHub Branches
+## 3. GitHub Boards
 
 ## 4. ER Diagram (StarUML)
 <img width="940" height="469" alt="image" src="https://github.com/user-attachments/assets/f8f41d40-3580-4568-9d46-a100aaa652de" />
