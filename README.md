@@ -580,7 +580,7 @@ The application follows a modular monolith architecture with clearly separated f
 
 - [View High-Level Architecture](design/diagrams/architecture.png)
 
-## 🖥️ User Interface Design
+## User Interface Design
 
 The interface provides operational dashboards for monitoring requests, provider health, analytics, governance, alerts, and root cause analysis.
 
