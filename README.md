@@ -570,6 +570,38 @@ Every module and feature is tracked as a GitHub Issue and managed throughout the
 - Advanced Governance Policies
 
 ---
+# Software Design
+
+The Enterprise AI Operations Center follows a modular, provider-agnostic architecture designed around abstraction, modularity, high cohesion, and low coupling. The system uses a centralized AI Gateway, interchangeable provider adapters, configurable routing strategies, governance controls, Redis caching, and analytics-driven root cause analysis.
+
+## Architecture Design
+
+The application follows a modular monolith architecture with clearly separated frontend, backend, data, analytics, external-service, and deployment layers.
+
+- [View High-Level Architecture](design/diagrams/architecture.png)
+
+## 🖥️ User Interface Design
+
+The interface provides operational dashboards for monitoring requests, provider health, analytics, governance, alerts, and root cause analysis.
+
+- [View UI Prototype Screenshot](design/ui/ui-prototype.png)
+
+## Software Design Document
+
+The design document explains the applied design principles, architecture, UI decisions, code-level abstractions, design patterns, maintainability, testing approach, and future enhancements.
+
+- [View Software Design Document](design/Software_Design_Document.pdf)
+
+## Key Design Decisions
+
+1. **Modular Monolith:** Simplifies development and deployment while preserving clear module boundaries.
+2. **Provider Adapter Pattern:** Isolates provider-specific APIs behind a common interface.
+3. **Strategy Pattern:** Allows routing algorithms to be changed or extended independently.
+4. **Redis Caching:** Supports fast prompt/response lookups and reduces repeated provider calls.
+5. **Event-Centered RCA:** Connects operational events to identify probable root causes and recommend actions.
+
+These decisions improve maintainability, testability, extensibility, and the ability to introduce new AI providers and operational features with minimal changes to existing modules.
+
 
 # Author
 
